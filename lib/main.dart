@@ -17,15 +17,23 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primaryColor: kbackgroundColor,
           textTheme: TextTheme(
-            bodyMedium: GoogleFonts.inter(
-                fontSize: 20, color: Colors.white, fontWeight: FontWeight.w500),
-            bodyLarge: GoogleFonts.inter(
-                fontSize: 24, color: Colors.white, fontWeight: FontWeight.w500),
-          ),
+              bodyMedium: GoogleFonts.poppins(
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500),
+              bodySmall: GoogleFonts.poppins(
+                  fontSize: 18,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500),
+              labelSmall: GoogleFonts.poppins(
+                  fontSize: 18,
+                  color: Colors.white54,
+                  fontWeight: FontWeight.w500)),
           colorScheme:
               ColorScheme.fromSwatch().copyWith(secondary: Colors.white),
           bottomSheetTheme:
               const BottomSheetThemeData(backgroundColor: kblueColor),
+          iconTheme: const IconThemeData(size: 90),
           useMaterial3: true),
       home: const InputPage(),
     );
