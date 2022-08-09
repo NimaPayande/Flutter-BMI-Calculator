@@ -243,9 +243,49 @@ class _InputPageState extends State<InputPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
+                        InkWell(
+                          onTap: () {
+                            ageDecrement();
+                          },
+                          child: Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                                color: Colors.transparent,
+                                borderRadius: BorderRadius.circular(5),
+                                border: Border.all(
+                                    color: Colors.white54, width: 3)),
+                            child: Center(
+                              child: Text(
+                                '-',
+                                style: textTheme.labelSmall,
+                              ),
+                            ),
+                          ),
+                        ),
                         Text(
                           '$age',
                           style: textTheme.bodyLarge,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            ageIncrement();
+                          },
+                          child: Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                                color: Colors.transparent,
+                                borderRadius: BorderRadius.circular(5),
+                                border: Border.all(
+                                    color: Colors.white54, width: 3)),
+                            child: Center(
+                              child: Text(
+                                '+',
+                                style: textTheme.labelSmall,
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     )
