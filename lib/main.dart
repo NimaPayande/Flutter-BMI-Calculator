@@ -33,6 +33,8 @@ class MyApp extends StatelessWidget {
               ColorScheme.fromSwatch().copyWith(secondary: Colors.white),
           bottomSheetTheme:
               const BottomSheetThemeData(backgroundColor: kblueColor),
+          bottomNavigationBarTheme:
+              const BottomNavigationBarThemeData(backgroundColor: kblueColor),
           iconTheme: const IconThemeData(size: 90),
           useMaterial3: true),
       home: const InputPage(),
