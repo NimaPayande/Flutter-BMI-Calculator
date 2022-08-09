@@ -16,6 +16,10 @@ class MyApp extends StatelessWidget {
       title: 'BMI Calculator',
       theme: ThemeData(
           textTheme: TextTheme(
+              bodyLarge: GoogleFonts.poppins(
+                  fontSize: 40,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500),
               bodyMedium: GoogleFonts.poppins(
                   fontSize: 20,
                   color: Colors.white,
@@ -34,7 +38,7 @@ class MyApp extends StatelessWidget {
               const BottomSheetThemeData(backgroundColor: kblueColor),
           bottomNavigationBarTheme:
               const BottomNavigationBarThemeData(backgroundColor: kblueColor),
-          iconTheme: const IconThemeData(size: 90),
+          iconTheme: const IconThemeData(size: 90, color: Colors.white),
           useMaterial3: true),
       home: const InputPage(),
     );

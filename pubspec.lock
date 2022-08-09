@@ -95,6 +95,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  font_awesome_flutter:
+    dependency: "direct main"
+    description:
+      name: font_awesome_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "10.1.0"
   google_fonts:
     dependency: "direct main"
     description:
@@ -102,13 +109,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.1"
-  horizontal_picker:
-    dependency: "direct main"
-    description:
-      name: horizontal_picker
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.2.0"
   http:
     dependency: transitive
     description:

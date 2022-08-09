@@ -15,6 +15,18 @@ class _InputPageState extends State<InputPage> {
   int height = 170;
   int weight = 60;
   int age = 18;
+  void ageIncrement() {
+    setState(() {
+      age++;
+    });
+  }
+
+  void ageDecrement() {
+    setState(() {
+      age--;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -133,6 +145,9 @@ class _InputPageState extends State<InputPage> {
                             height = newValue;
                           });
                         }),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -141,7 +156,7 @@ class _InputPageState extends State<InputPage> {
                           (index) => Container(
                                 margin:
                                     const EdgeInsets.symmetric(horizontal: 29),
-                                height: index == 2 ? 40 : 30,
+                                height: index == 2 ? 30 : 20,
                                 width: 2,
                                 color:
                                     index == 2 ? Colors.white : Colors.white54,
@@ -155,11 +170,87 @@ class _InputPageState extends State<InputPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AppCard(child: Column()),
+                AppCard(
+                    child: Column(
+                  children: [
+                    const SizedBox(height: 15),
+                    Text(
+                      'Wieght',
+                      style: textTheme.bodySmall,
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    Container(
+                      height: 80,
+                      width: 130,
+                      decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(.18),
+                          border: Border.all(
+                              width: 2, color: Colors.grey.withOpacity(.3)),
+                          borderRadius: BorderRadius.circular(30)),
+                      child: Stack(
+                        alignment: Alignment.topCenter,
+                        children: [
+                          const Positioned(
+                            bottom: 60,
+                            child: RotatedBox(
+                              quarterTurns: 45,
+                              child: Icon(
+                                Icons.play_arrow_rounded,
+                                size: 30,
+                              ),
+                            ),
+                          ),
+                          Center(
+                            child: NumberPicker(
+                                minValue: 10,
+                                maxValue: 150,
+                                value: weight,
+                                itemWidth: 40,
+                                selectedTextStyle: const TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                                textStyle: const TextStyle(
+                                    color: Colors.white54, fontSize: 16),
+                                axis: Axis.horizontal,
+                                onChanged: (newValue) {
+                                  setState(() {
+                                    weight = newValue;
+                                  });
+                                }),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                )),
                 const SizedBox(
                   width: 10,
                 ),
-                AppCard(child: Column()),
+                AppCard(
+                    child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      'Age',
+                      style: textTheme.bodySmall,
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          '$age',
+                          style: textTheme.bodyLarge,
+                        ),
+                      ],
+                    )
+                  ],
+                )),
               ],
             )
           ],
