@@ -1,5 +1,5 @@
 import 'package:bmi_calculator/constants.dart';
-import 'package:bmi_calculator/input_page.dart';
+import 'package:bmi_calculator/bmi_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
               bodyLarge: GoogleFonts.poppins(
                   fontSize: 40,
                   color: Colors.white,
-                  fontWeight: FontWeight.w500),
+                  fontWeight: FontWeight.w600),
               bodyMedium: GoogleFonts.poppins(
                   fontSize: 20,
                   color: Colors.white,
@@ -34,13 +34,15 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.w500)),
           colorScheme:
               ColorScheme.fromSwatch().copyWith(secondary: Colors.white),
-          bottomSheetTheme:
-              const BottomSheetThemeData(backgroundColor: kblueColor),
+          bottomSheetTheme: BottomSheetThemeData(
+              backgroundColor: kblueColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30))),
           bottomNavigationBarTheme:
               const BottomNavigationBarThemeData(backgroundColor: kblueColor),
           iconTheme: const IconThemeData(size: 90, color: Colors.white),
           useMaterial3: true),
-      home: const InputPage(),
+      home: const BmiPage(),
     );
   }
 }
