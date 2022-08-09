@@ -36,13 +36,12 @@ class _InputPageState extends State<InputPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                InkWell(
+                GestureDetector(
                   onTap: () {
                     setState(() {
                       isMaleSelected = true;
                     });
                   },
-                  borderRadius: BorderRadius.circular(20),
                   child: AppCard(
                     borderSide: isMaleSelected
                         ? const BorderSide(color: Colors.white70, width: 3)
@@ -70,13 +69,12 @@ class _InputPageState extends State<InputPage> {
                 const SizedBox(
                   width: 10,
                 ),
-                InkWell(
+                GestureDetector(
                   onTap: () {
                     setState(() {
                       isMaleSelected = false;
                     });
                   },
-                  borderRadius: BorderRadius.circular(20),
                   child: AppCard(
                       borderSide: isMaleSelected == false
                           ? const BorderSide(color: Colors.white70, width: 3)
@@ -135,6 +133,20 @@ class _InputPageState extends State<InputPage> {
                             height = newValue;
                           });
                         }),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: List.generate(
+                          5,
+                          (index) => Container(
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 29),
+                                height: index == 2 ? 40 : 30,
+                                width: 2,
+                                color:
+                                    index == 2 ? Colors.white : Colors.white54,
+                              )),
+                    )
                   ],
                 )),
             const SizedBox(
