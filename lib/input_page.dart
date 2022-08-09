@@ -1,6 +1,6 @@
 import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/widgets/card.dart';
-import 'package:horizontal_picker/horizontal_picker.dart';
+import 'package:numberpicker/numberpicker.dart';
 import 'package:flutter/material.dart';
 
 class InputPage extends StatefulWidget {
@@ -116,28 +116,25 @@ class _InputPageState extends State<InputPage> {
                       'Height',
                       style: textTheme.bodySmall,
                     ),
-                    Expanded(
-                      child: SizedBox(
-                        height: 150,
-                        width: double.infinity,
-                        child: HorizontalPicker(
-                          minValue: 120,
-                          maxValue: 220,
-                          divisions: 100,
-                          initialPosition: InitialPosition.center,
-                          height: height.toDouble(),
-                          onChanged: (newValue) {
-                            setState(() {
-                              height = newValue.round();
-                            });
-                          },
-                          backgroundColor: Colors.transparent,
-                          showCursor: false,
-                          passiveItemsTextColor: Colors.white54,
-                          activeItemTextColor: Colors.white,
-                        ),
-                      ),
+                    const SizedBox(
+                      height: 25,
                     ),
+                    NumberPicker(
+                        minValue: 120,
+                        maxValue: 220,
+                        value: height,
+                        selectedTextStyle:
+                            const TextStyle(color: Colors.white, fontSize: 24),
+                        textStyle: const TextStyle(
+                            color: Colors.white54, fontSize: 16),
+                        axis: Axis.horizontal,
+                        itemCount: 5,
+                        itemWidth: 60,
+                        onChanged: (newValue) {
+                          setState(() {
+                            height = newValue;
+                          });
+                        }),
                   ],
                 )),
             const SizedBox(

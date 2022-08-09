@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'BMI Calculator',
       theme: ThemeData(
-          primaryColor: kbackgroundColor,
           textTheme: TextTheme(
               bodyMedium: GoogleFonts.poppins(
                   fontSize: 20,
